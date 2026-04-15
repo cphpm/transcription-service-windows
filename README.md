@@ -1,15 +1,4 @@
 # Audio/Video Transcription Service
-
-##CUSTOM SECTION DEVELOPER TO KEEP
-The GPU compose file is fine. The issue is likely that you rebuilt using docker compose build (which uses the default CPU docker-compose.yml), but you need to rebuild with the GPU compose file:
-
-
-docker compose -f docker-compose.gpu.yml build --build-arg HF_TOKEN=insert_token
-Then start it:
-
-
-docker compose -f docker-compose.gpu.yml up
-
 Flask-based transcription service using OpenAI's Whisper model with automatic speaker detection.
 
 ## Features
@@ -119,19 +108,6 @@ docker-compose -f docker-compose.gpu.yml down
   ports:
     - "8081:5000"  # Use 8081 instead of 8080
   ```
-
-## Performance Expectations
-
-| Device | Model | Speed (approx) |
-|--------|-------|----------------|
-| MacBook (CPU) | Base | ~2x real-time |
-| MacBook (CPU) | Medium | ~4x real-time |
-| MacBook (CPU) | Large-v3 | ~8x real-time |
-| NVIDIA GPU | Base | ~0.3x real-time |
-| NVIDIA GPU | Medium | ~0.5x real-time |
-| NVIDIA GPU | Large-v3 | ~1x real-time |
-
-*Real-time = 1 minute to process 1 minute of audio*
 
 ## License
 
