@@ -9,6 +9,7 @@ Flask-based transcription service using OpenAI's Whisper model with automatic sp
 - 🎯 **Multiple models**: Base (fast), Medium (balanced), Large-v3 (accurate)
 - 🌐 **Web interface**: Drag-and-drop file upload with progress tracking
 - ⚡ **Real-time progress**: Live updates with cancellation support
+- 🎙️ **AI transcript processing**: Use either Gemini API key or Ollama for a local model
 
 ## Quick Start
 
@@ -108,6 +109,9 @@ docker-compose -f docker-compose.gpu.yml down
   ports:
     - "8081:5000"  # Use 8081 instead of 8080
   ```
+
+## AI transcription processing
+If you want to use AI for processing the transcript, you can use Cloud (Gemini) or Ollama locally. You'll need to respectively configure Gemini API key and or Ollama in .env
 
 ## License
 
